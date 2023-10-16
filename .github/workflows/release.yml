@@ -24,9 +24,9 @@ jobs:
       - name: Build Docker Image
         run: |
           docker build --tag ghcr.io/$GITHUB_ACTOR/github-package-publish-example:latest \
-          --tag ghcr.io/$GITHUB_ACTOR/github-package-publish-example:$(echo $GITHUB_SHA | head -c7) \
+          --tag ghcr.io/$GITHUB_ACTOR/github-package-publish-example:v1.0.0 \
           .
       - name: Push Docker Image
         run: |
           docker push ghcr.io/$GITHUB_ACTOR/github-package-publish-example:latest
-          docker push ghcr.io/$GITHUB_ACTOR/github-package-publish-example:$(echo $GITHUB_SHA | head -c7)
+          docker push ghcr.io/$GITHUB_ACTOR/github-package-publish-example:v1.0.0
